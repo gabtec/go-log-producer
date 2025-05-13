@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs-producer
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logs-producer
+  template:
+    metadata:
+      labels:
+        app: logs-producer
+    spec:
+      containers:
+        - name: logs-producer
+          image: ghcr.io/gabtec/go-log-producer:v0.1.0
+          ports:
+            - containerPort: 4000
+          resources:
+            requests:
+              cpu: 125m
+              memory: 250Mi
+            limits:
+              cpu: 250m
+              memory: 500Mi
