@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: logs-producer
-          image: ghcr.io/gabtec/go-log-producer:v0.1.0
+          image: ghcr.io/gabtec/go-log-producer:v0.1.1
           ports:
             - containerPort: 4000
           resources:

@@ -26,6 +26,7 @@ func main() {
 
 		code := getHttpCode(randomIndex)
 		w.WriteHeader(code)
+		w.Header().Add("Content-Type", "application/json")
 
 		if code == http.StatusOK {
 			slog.Info("Success code was selected")
