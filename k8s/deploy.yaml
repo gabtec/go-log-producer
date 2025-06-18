@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: logs-producer
+        env: dev
     spec:
       containers:
         - name: logs-producer
